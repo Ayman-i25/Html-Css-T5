@@ -1,4 +1,4 @@
-let countDownDate = new Date("2023 7 25 10:25:25").getTime()
+let countDownDate = new Date("2025 7 25 10:25:25").getTime()
 
 let couter = setInterval( () =>{
     //Get Date Now
@@ -93,3 +93,29 @@ lis.forEach((ele) => {
 
 
 
+// top video sction
+
+let lisTopVid = document.querySelectorAll(".video .list ul li")
+let imgs = Array.from(document.querySelectorAll(".video .preview img"))
+currentImge = 1
+
+lisTopVid.forEach(((li) => {
+    li.addEventListener("click" , addActive)
+    li.addEventListener("click" , addActiveToImg)
+    
+    
+}))
+
+function addActive() {
+    lisTopVid.forEach((e) => {
+        e.classList.remove("active")
+        this.classList.add("active")
+    })
+
+}
+function addActiveToImg() {
+    imgs.forEach((ele) => {
+        ele.classList.remove("active")
+    })
+    document.querySelector(this.dataset.name).classList.add("active")
+}
